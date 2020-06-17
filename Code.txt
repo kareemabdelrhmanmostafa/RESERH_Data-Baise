@@ -1,0 +1,57 @@
+CREATE TABLE [Sallers] (
+  [Seller_ID] INT NOT NULL,
+  [First_Name] VARCHAR(50),
+  [Last_Name] VARCHAR(50),
+  [Salary] INT NOT NULL,
+  [Manager_ID] INT NOT NULL,
+  PRIMARY KEY ([Seller_ID])
+);
+
+CREATE INDEX [FK] ON  [Sallers] ([Manager_ID]);
+
+CREATE TABLE [Customers] (
+  [Customer_ID] INT NOT NULL,
+  [First_Name] VARCHAR(50),
+  [Last_Name] VARCHAR(50),
+  [Phone_NO] INT NOT NULL,
+  [Address] VARCHAR(50),
+  PRIMARY KEY ([Customer_ID])
+);
+
+CREATE TABLE [Vehicles] (
+  [vehicle_ID] INT NOT NULL,
+  [Model] VARCHAR(50),
+  [Numbers] VARCHAR(8),
+  [Year] DATE NOT NULL,
+  [Brand] VARCHAR(50),
+  [Price] INT NOT NULL,
+  PRIMARY KEY ([vehicle_ID])
+);
+
+CREATE TABLE [Renting] (
+  [Rent_ID] INT NOT NULL,
+  [Customer_ID] INT NOT NULL,
+  [Seller_ID] INT NOT NULL,
+  [Date] DATE NOT NULL,
+  [Vehicle_ID] INT NOT NULL,
+  PRIMARY KEY ([Rent_ID])
+);
+
+CREATE INDEX [FK] ON  [Renting] ([Customer_ID], [Seller_ID], [Vehicle_ID]);
+
+CREATE TABLE [Managers] (
+  [Manager_ID] INT NOT NULL,
+  [First_Name] VARCHAR(50),
+  [Last_Name] VARCHAR(50),
+  [Phone_NO] INT NOT NULL,
+  PRIMARY KEY ([Manager_ID])
+);
+
+CREATE TABLE [Authors] (
+  [Author_ID] INT NOT NULL,
+  [Name] VARCHAR(50),
+  [Phone] INT NOT NULL,
+  PRIMARY KEY ([Author_ID])
+);
+
+

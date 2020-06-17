@@ -1,0 +1,135 @@
+Q-1. Write an SQL query to fetch “First_Name” from Sellers table using the alias name as <Seller_NAME>
+
+Select First_Name AS SellerName from Sellers;
+
+Q-2. Write an SQL query to fetch “First_Name” from Sellers table in upper case.
+
+Select upper(First_Name) from Sellers;
+
+Q-3. Write an SQL query to fetch unique values of Salary from Sellers table.
+
+Select distinct Salary from Sellers;
+
+Q-5. Write an SQL query to find the position of the alphabet (‘a’) in the first_Name column ‘Amitabh’ from Sellers table.
+
+Select INSTR(First_Name, BINARY'a') from Sellers where First_Name = 'Amitabh';
+
+Q-6. Write an SQL query to print the First_Name from Sellers table after removing white spaces from the right side.
+
+Select RTRIM(First_Name) from Sellers;
+
+Q-7. Write an SQL query to print the First_Name from Sellers table after removing white spaces from the left side.
+
+Select LTRIM(First_Name) from Sellers;
+
+Q-8. Write an SQL query that fetches the unique values of Last_Name from Sellers table and prints its length.
+
+Select distinct length(Last_Name) from Sellers;
+
+Q-9. Write an SQL query to print the First_Name from Sellers table after replacing ‘a’ with ‘A’.
+
+Select REPLACE(First_Name,'a','A') from Sellers;
+
+Q-11. Write an SQL query to print all Sellers details from the Worker table order by FIrst_Name Ascending.
+
+Select * from Sellers order by First_Name asc;
+
+Q-12. Write an SQL query to print all Sellers details from the Seller table order by FIRST_Name Ascending and Salary Descending.
+
+Select * from Sellers order by First_Name asc,Salary desc;
+
+13* Write an SQL query to show only even rows from a table.??
+
+SELECT * FROM Vehicles WHERE MOD (Vehicle_ID, 2) = 0;
+ 
+14* Write an SQL query to clone a new table from another table.?
+
+SELECT * INTO VehicleClone FROM Vehicles;
+SELECT * INTO VehicleClone FROM Vehicles WHERE 1 = 0;
+CREATE TABLE VehicleClone LIKE Vehicles;
+
+15* Write an SQL query to fetch intersecting records of two tables?
+
+(SELECT * FROM Vehicles)
+INTERSECT
+(SELECT * FROM VehicleClone);
+ 
+16*  Write an SQL query to show the second highest Price from a table.?
+
+Select max(Price) from Vehicles 
+where Price not in (Select max(Price) from Vehicles);
+ 
+17* Write an SQL query to show only odd rows from a table.??
+
+SELECT * FROM Vehicles WHERE MOD (Vehicle_ID, 2) <> 0;
+
+18* Write an SQL query to show only even rows from a table.??
+
+SELECT * FROM Vehicles WHERE MOD (Vehicle_ID, 2) = 0;
+ 
+19* Write an SQL query to clone a new table from another table.?
+
+SELECT * INTO VehicleClone FROM Vehicles;
+SELECT * INTO VehicleClone FROM Vehicles WHERE 1 = 0;
+CREATE TABLE VehicleClone LIKE Vehicles;
+
+
+20* Write an SQL query to fetch intersecting records of two tables?
+
+(SELECT * FROM Vehicles)
+INTERSECT
+(SELECT * FROM VehicleClone);
+
+
+
+
+
+
+
+
+--  insert statment
+
+INSERT INTO Managers VALUES(1,'Lotfy ','shawky',012222,);
+INSERT INTO Managers VALUES(2,'Saad','fathy',034440,);
+INSERT INTO Managers VALUES(3,'Tarek','omar',012255,);
+INSERT INTO Vehicles VALUES(1,'Fait',3E783,2000,corsa, 8000)
+INSERT INTO Vehicles VALUES(2,'Farari',1B797,1997,vectra, 5000 );
+
+
+-- 5 update statments
+
+UPDATE Managers
+SET FirstName = 'reno'
+WHERE ManagerID = 1;
+
+UPDATE Managers
+SET LastName = 'kinakom'
+WHERE ManagerID = 2;
+
+UPDATE Managers
+SET PhoneNO = '01222222'
+WHERE ManagerID = 3;
+
+UPDATE Vehicles
+SET Price = '200 L.E'
+WHERE Vehicle_ID = 1;
+
+UPDATE Vehicles
+SET Model = 'hayndi' 
+WHERE Vehicle_ID = 2;
+
+
+-- 5 delete statments
+
+DELETE FROM Customer WHERE GuestID= 1;
+DELETE FROM Customer WHERE GuestID= 2;
+DELETE FROM Customer WHERE GuestID= 3;
+DELETE FROM Managers WHERE ManagerID= 1;
+DELETE FROM Managers WHERE ManagerID= 1;
+
+
+
+
+
+
+
